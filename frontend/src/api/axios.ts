@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5000/api', // Points to your Express backend
+  baseURL: 'https://jmproject-dwe9.onrender.com/api', // Points to your Live Render backend
 });
 
 // This interceptor runs before EVERY request.
