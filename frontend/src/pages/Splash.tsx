@@ -11,7 +11,7 @@ export default function Splash() {
       alignItems: 'center',
       justifyContent: 'center',
       // Apply the image with a dark gradient overlay for text readability
-      background: `linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.95)), url(${bgImage}) center/cover no-repeat`,
+      background: `url(${bgImage}) center/cover no-repeat`,
       textAlign: 'center',
       padding: '20px'
     }}>
