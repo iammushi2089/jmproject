@@ -11,7 +11,7 @@ export default function Splash() {
       alignItems: 'center',
       justifyContent: 'center',
       // Apply the image with a dark gradient overlay for text readability
-      background: `url(${bgImage}) center/cover no-repeat`,
+      background: `linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.95)), url(${bgImage}) center/cover no-repeat`,
       textAlign: 'center',
       padding: '20px'
     }}>
@@ -20,7 +20,7 @@ export default function Splash() {
         StreetLens
       </h1>
       
-      <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.8)', marginBottom: '3rem', maxWidth: '600px', lineHeight: '1.6' }}>
+      <p style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)', fontSize: '1.2rem', color: 'rgba(255,255,255,0.8)', marginBottom: '3rem', maxWidth: '600px', lineHeight: '1.6' }}>
         Real moments, vibrant sunsets, and the everyday stories of humanity. Join our community to share your perspective.
       </p>
 
