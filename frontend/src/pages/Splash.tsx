@@ -1,41 +1,44 @@
 import { Link } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
+// Import your background image from the assets folder
+import bgImage from '../assets/backgroundforsplashpage.jpg';
 
 export default function Splash() {
-  const { user } = useAuth();
-
   return (
-    <div style={{ width: '100vw', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', backgroundColor: '#121212', color: 'white', textAlign: 'center', padding: '20px' }}>
-      <div className="logo" style={{ fontSize: '60px', marginBottom: '20px' }}>📷</div>
+    <section style={{
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      // Apply the image with a dark gradient overlay for text readability
+      background: `linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.95)), url(${bgImage}) center/cover no-repeat`,
+      textAlign: 'center',
+      padding: '20px'
+    }}>
       
-      <h1 style={{ background: 'linear-gradient(135deg, #ff7e5f, #feb47b)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontSize: '4rem', marginBottom: '10px' }}>
-        Welcome to StreetLens
+      <h1 style={{ fontSize: '4.5rem', color: 'var(--accent)', marginBottom: '1rem', letterSpacing: '2px' }}>
+        StreetLens
       </h1>
       
-      <p style={{ color: '#a0a0a0', fontSize: '1.2rem', marginBottom: '40px', maxWidth: '600px' }}>
-        A community blog where photographers share real moments, vibrant sunsets, and the everyday stories of humanity.
+      <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.8)', marginBottom: '3rem', maxWidth: '600px', lineHeight: '1.6' }}>
+        Real moments, vibrant sunsets, and the everyday stories of humanity. Join our community to share your perspective.
       </p>
-      
-      <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap', justifyContent: 'center' }}>
-        <Link to="/home" style={{ padding: '12px 24px', background: 'linear-gradient(135deg, #ff7e5f, #feb47b)', color: '#fff', textDecoration: 'none', borderRadius: '8px', fontWeight: '600' }}>
-          Browse Posts
+
+      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <Link 
+          to="/login" 
+          style={{ padding: '15px 40px', background: 'var(--accent)', color: '#fff', textDecoration: 'none', borderRadius: '8px', fontSize: '1.1rem', fontWeight: '600', boxShadow: '0 4px 15px rgba(255, 126, 95, 0.3)' }}
+        >
+          Login
         </Link>
-        
-        {!user ? (
-          <>
-            <Link to="/register" style={{ padding: '12px 24px', background: 'rgba(255,255,255,0.1)', color: '#fff', textDecoration: 'none', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.2)' }}>
-              Create Account
-            </Link>
-            <Link to="/login" style={{ padding: '12px 24px', background: 'rgba(255,255,255,0.1)', color: '#fff', textDecoration: 'none', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.2)' }}>
-              Login
-            </Link>
-          </>
-        ) : (
-          <Link to="/create-post" style={{ padding: '12px 24px', background: 'rgba(255,255,255,0.1)', color: '#fff', textDecoration: 'none', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.2)' }}>
-            Write a Post
-          </Link>
-        )}
+        <Link 
+          to="/register" 
+          style={{ padding: '15px 40px', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)', color: '#fff', textDecoration: 'none', borderRadius: '8px', fontSize: '1.1rem', fontWeight: '600', backdropFilter: 'blur(5px)' }}
+        >
+          Register
+        </Link>
       </div>
-    </div>
+      
+    </section>
   );
 }

@@ -13,7 +13,13 @@ const messageRoutes = require('./routes/message.routes'); // Added
 const app = express();
 connectDB();
 
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(cors({ 
+  origin: [
+    'http://localhost:5173', 
+    'https://jmpogii.vercel.app' // <- Your live Vercel URL added here!
+  ], 
+  credentials: true 
+}));
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
