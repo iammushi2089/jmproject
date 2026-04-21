@@ -49,7 +49,7 @@ export default function Home() {
                   <Link to={`/posts/${post._id}`} style={{ display: 'block', textDecoration: 'none' }}>
                     {post.image ? (
                       <img 
-                        src={`http://localhost:5000/uploads/${post.image}`} 
+                        src={`https://jmproject-dwe9.onrender.com/uploads/${post.image}`} 
                         alt={post.title} 
                         style={{ width: '100%', height: '250px', objectFit: 'cover', display: 'block' }}
                       />
@@ -70,7 +70,7 @@ export default function Home() {
                     
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: 'auto', paddingTop: '15px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
                       <img 
-                        src={post.author?.profilePic ? `http://localhost:5000/uploads/${post.author.profilePic}` : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'} 
+                        src={post.author?.profilePic ? `https://jmproject-dwe9.onrender.com/uploads/${post.author.profilePic}` : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'} 
                         alt="Author" 
                         style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover', border: '1px solid var(--accent)' }}
                       />

@@ -76,14 +76,14 @@ export default function PostPage() {
       <Link to="/home" style={{ color: 'var(--accent)', textDecoration: 'none', display: 'block', marginBottom: '20px' }}>← Back to Gallery</Link>
       
       {post.image && (
-        <img src={`http://localhost:5000/uploads/${post.image}`} alt={post.title} style={{ width: '100%', borderRadius: '16px', marginBottom: '30px', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }} />
+        <img src={`https://jmproject-dwe9.onrender.com/uploads/${post.image}`} alt={post.title} style={{ width: '100%', borderRadius: '16px', marginBottom: '30px', boxShadow: '0 10px 30px rgba(0,0,0,0.3)' }} />
       )}
       
       <h1 style={{ fontSize: '3.5rem', marginBottom: '15px', lineHeight: '1.2' }}>{post.title}</h1>
       
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '40px', borderBottom: '1px solid var(--border)', paddingBottom: '20px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-          <img src={post.author?.profilePic ? `http://localhost:5000/uploads/${post.author.profilePic}` : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'} style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--accent)' }} />
+          <img src={post.author?.profilePic ? `https://jmproject-dwe9.onrender.com/uploads/${post.author.profilePic}` : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'} style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover', border: '2px solid var(--accent)' }} />
           <div>
             <p style={{ margin: 0, fontWeight: '600' }}>{post.author?.name}</p>
             <small style={{ color: 'var(--text-muted)' }}>{new Date(post.createdAt).toLocaleDateString()}</small>
